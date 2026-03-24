@@ -1,0 +1,193 @@
+/* ============================================
+   Hologram — Interactive Memories of the Holocaust
+   style.css  (shared across all pages)
+   ============================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:     #f9f7f2;
+  --dark:   #1a1a1a;
+  --mid:    #4a4a4a;
+  --light:  #7a7a7a;
+  --border: #d0ccc4;
+  --accent: #8b2b2b;
+  --btn:    #eeece6;
+  --btn-h:  #e0ddd5;
+  --serif:  'Georgia', 'Times New Roman', serif;
+  --sans:   'Helvetica Neue', Arial, sans-serif;
+}
+
+html { background: var(--bg); color: var(--dark); font-family: var(--serif); }
+body { min-height: 100vh; display: flex; flex-direction: column; }
+
+.page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem 5rem;
+  min-height: 100vh;
+}
+
+.centered {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 700px;
+  width: 100%;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  max-width: 1080px;
+  width: 100%;
+}
+
+.content-wide {
+  max-width: 1080px;
+  width: 100%;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0.75rem 0 0.35rem;
+  font-family: var(--sans);
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--mid);
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  color: var(--light);
+  font-style: italic;
+}
+
+.ghost {
+  color: var(--light);
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.9rem;
+  background: var(--btn);
+  color: var(--dark);
+  border: 1.5px solid var(--border);
+  border-radius: 9999px;
+  font-family: var(--serif);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.btn:hover { background: var(--btn-h); }
+
+.btn-muted {
+  background: transparent;
+  border-color: var(--light);
+  color: var(--light);
+}
+.btn-muted:hover { background: #f0ede6; }
+
+.btn-back {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--mid);
+  font-size: 0.9rem;
+}
+.btn-back:hover { background: #f0ede6; }
+
+.photo-ph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background: #eae7e0;
+  border: 1.5px dashed var(--border);
+  border-radius: 6px;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  color: var(--light);
+  font-size: 0.82rem;
+  font-family: var(--sans);
+  text-align: center;
+  padding: 1rem;
+}
+.photo-ph.wide { aspect-ratio: 16 / 7; max-height: 300px; }
+.photo-ph.sq   { aspect-ratio: 4 / 3; }
+.photo-ph strong { color: var(--mid); font-weight: 600; }
+.photo-ph em     { font-size: 0.73rem; }
+
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+  margin: 1.5rem 0;
+}
+
+.location-card {
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  background: #fff;
+  text-decoration: none;
+  color: var(--dark);
+  display: block;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.location-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+}
+.location-card p { font-size: 0.85rem; color: var(--light); font-family: var(--sans); }
+
+.source-links { list-style: none; margin: 0.75rem 0 1rem; }
+.source-links li { padding: 0.28rem 0; font-family: var(--sans); font-size: 0.95rem; color: var(--mid); }
+.source-links li::before { content: "\2014  "; color: var(--light); }
+.source-links a { color: var(--accent); }
+
+.breadcrumb {
+  position: fixed;
+  top: 1.2rem;
+  left: 1.5rem;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--light);
+}
+.breadcrumb a { color: var(--light); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+
+@media (max-width: 720px) {
+  .two-col { grid-template-columns: 1fr; }
+  .location-grid { grid-template-columns: 1fr; }
+  .photo-ph.wide { aspect-ratio: 4 / 3; }
+  .page { padding: 2rem 1rem 4rem; }
+}
