@@ -143,6 +143,14 @@ p {
 }
 .photo-ph.wide { aspect-ratio: 16 / 7; max-height: 300px; }
 
+.gates {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 55%, transparent 100%);
+  mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 55%, transparent 100%);
+}
+
 .portrait {
   width: 100%;
   display: block;
