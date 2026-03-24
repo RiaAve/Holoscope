@@ -142,6 +142,14 @@ p {
   padding: 1rem;
 }
 .photo-ph.wide { aspect-ratio: 16 / 7; max-height: 300px; }
+
+.portrait {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 55%, transparent 100%);
+  mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 55%, transparent 100%);
+}
 .photo-ph.sq   { aspect-ratio: 4 / 3; }
 .photo-ph strong { color: var(--mid); font-weight: 600; }
 .photo-ph em     { font-size: 0.73rem; }
